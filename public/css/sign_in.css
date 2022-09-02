@@ -1,0 +1,17 @@
+#btn_sign_in {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0em 0em 0em auto;
+}
+
+section.c1 div.c2 {
+  height: 100%;
+}
+
+@media only screen and (min-width: 576px) {
+  .c1 .c2 {
+    height: 100vh !important;
+  }
+}

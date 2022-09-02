@@ -14,13 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('', function () {
-    return view('pages.home');
+    return redirect('signin');
 });
 
 
-Route::get('/login', function () {
-    return "Blog CRUD application";
-    // return view('welcome');
+Route::get('/signin', function () {
+    return view('pages.sign_in');
 });
 
 
