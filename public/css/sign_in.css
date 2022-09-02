@@ -1,8 +1,11 @@
+#btn_sign_in, #btn_sign_up {
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+
 #btn_sign_in {
   display: block;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   margin: 0em 0em 0em auto;
 }
 

@@ -6,7 +6,7 @@
 
     <section class="c1 container-md" id="sign_in_section">
         <div class="c2 row align-items-center">
-            <div class="col-sm">
+            <div class="col-sm my-4">
                 <h1 class="fw-bolder">BLOG APP</h1>
                 <h5>A Personal Blog Website</h5>
             </div>
@@ -18,22 +18,30 @@
                     </div>
                     <div class="mb-2">
                         <label for="email">Email</label>
-                        <input type="text" id="email" class="form-control form-control-sm">
+                        <input type="text" id="email" class="form-control">
                     </div>
                     <div class="mb-2">
                         <label for="password">Password</label>
-                        <div class="input-group input-group-sm ">
+                        <div class="input-group  ">
                             <input :type="is_password_hidden ? 'password' : 'text'" class="form-control form-control-sm">
                             <button class="btn btn-outline-secondary" type="button" @click="toggle_password">
                                 <i :class="is_password_hidden ? 'fa fa-eye' : 'fa fa-eye-slash'"></i>
                             </button>
                         </div>
                     </div>
-                    <div>
-                        <button class="btn btn-primary" id="btn_sign_in">
-                            <i class="fa-solid fa-arrow-right-to-bracket"></i> 
-                            Sign In
-                        </button>
+                    <div class="row">
+                        <div class="col">
+                            <a href="/signup" class="btn btn-clear-secondary  col" id="btn_sign_up">
+                                <i class="fa-solid fa-user"></i> 
+                                Sign Up
+                            </a>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-primary  col" id="btn_sign_in">
+                                <i class="fa-solid fa-arrow-right-to-bracket"></i> 
+                                Sign In
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>

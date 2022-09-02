@@ -1,7 +1,10 @@
 
+#btn_sign_in, #btn_sign_up{
+    // display: block;
+    width: fit-content !important;
+}
 #btn_sign_in{
     display: block;
-    width: fit-content;
     margin: 0em 0em 0em auto;
 }
 
