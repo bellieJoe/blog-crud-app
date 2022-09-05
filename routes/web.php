@@ -1,6 +1,11 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Models\User;
+use GuzzleHttp\Middleware;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,23 +19,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('testing', function(Request $req){
+    return json_encode(User::find(Auth::user()->user_id));
+});
+
 Route::get('', function () {
     return redirect('signin');
 });
 
 
 Route::get('/signin', function () {
-return view('pages.sign_in');
-})->name('login');
+    return view('pages.sign_in');
+})
+->middleware('guest')
+->name('login');
 
 
 Route::get('/signup', function () {
     return view('pages.sign_up');
+})
+->middleware('guest');
+
+Route::get('/home', function(){
+    return redirect('/blog');
 });
 
 Route::get('/blog', function () {
     return view('pages.blogs');
-})->middleware('auth', 'verified');
+})
+->middleware('auth', 'verified');
+
 
 
 /* 
@@ -40,7 +58,7 @@ Route::prefix('email')->group(function () {
     Route::get('verify-email', function(){
         return view('auth.verify_email');
     })
-    // ->middleware('auth')
+    ->middleware('auth')
     ->name('verification.notice');
 
     Route::get('verify/{id}/{hash}', function (EmailVerificationRequest $request) {
@@ -56,6 +74,13 @@ Route::prefix('email')->group(function () {
         return back()->with('message', 'Verification link sent!');
     })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
+
+    Route::post('/verification-notification', function (Request $request) {
+        $user = User::find(Auth::user()->user_id);
+        $user->sendEmailVerificationNotification();
+     
+        return back()->with('message', 'Verification link sent!');
+    })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 });
 
 Route::prefix('user')->group(function () {
@@ -63,4 +88,6 @@ Route::prefix('user')->group(function () {
     Route::post('register', [UserController::class, 'register']);
 
     Route::get('logout', [UserController::class, 'logout']);
+
+    Route::post('login', [UserController::class, 'login']);
 });

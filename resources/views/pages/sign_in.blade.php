@@ -11,23 +11,25 @@
                 <h5>A Personal Blog Website</h5>
             </div>
             <div class="col-sm">
-                <form id="sign_up_form" class="shadow-lg bg-white p-3 rounded-1 flex-column h-auto align-self-center mw-100">
+                <form method="POST" action="/user/login" id="sign_up_form" class="shadow-lg bg-white p-3 rounded-1 flex-column h-auto align-self-center mw-100">
                     @csrf
                     <div>
                         <h5 class="fw-bolder">Sign In</h5>
                     </div>
                     <div class="mb-2">
                         <label for="email">Email</label>
-                        <input type="text" id="email" class="form-control">
+                        <input type="text" id="email" class="form-control" required name="email" value="{{ old('email') }}">
+                        @includeWhen($errors->first('email'), 'components.validation_err_msg', ['err_message' => $errors->first('email')])
                     </div>
                     <div class="mb-2">
                         <label for="password">Password</label>
                         <div class="input-group  ">
-                            <input :type="is_password_hidden ? 'password' : 'text'" class="form-control form-control-sm">
+                            <input :type="is_password_hidden ? 'password' : 'text'" class="form-control form-control-sm" required name="password">
                             <button class="btn btn-outline-secondary" type="button" @click="toggle_password">
                                 <i :class="is_password_hidden ? 'fa fa-eye' : 'fa fa-eye-slash'"></i>
                             </button>
                         </div>
+                        @includeWhen($errors->first('password'), 'components.validation_err_msg', ['err_message' => $errors->first('password')])
                     </div>
                     <div class="row">
                         <div class="col">

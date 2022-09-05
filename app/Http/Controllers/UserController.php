@@ -38,4 +38,21 @@ class UserController extends Controller
 
         return redirect('/');
     }
+
+    public function login(Request $req){
+        $credentials = $req->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $req->session()->regenerate();
+ 
+            return redirect('/blog');
+        }
+ 
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
+    }
 }
