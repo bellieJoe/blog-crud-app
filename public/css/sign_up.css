@@ -1,0 +1,11 @@
+#sign_up_section form {
+  max-width: 500px;
+  margin: 0rem auto;
+}
+#sign_up_section #btn_sign_up {
+  display: block;
+  margin: 0rem 0rem 0rem auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}

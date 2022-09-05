@@ -9,6 +9,8 @@ class Blog extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'blog_id';
+
     protected $fillable = [
         'blog_title',
         'blog_content',

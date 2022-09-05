@@ -3,5 +3,7 @@
     "/js/sign_in.js": "/js/sign_in.js",
     "/js/sign_up.js": "/js/sign_up.js",
     "/css/app.css": "/css/app.css",
-    "/css/sign_in.css": "/css/sign_in.css"
+    "/css/sign_up.css": "/css/sign_up.css",
+    "/css/sign_in.css": "/css/sign_in.css",
+    "/css/verify_email.css": "/css/verify_email.css"
 }

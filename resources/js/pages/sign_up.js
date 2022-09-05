@@ -1,1 +1,10 @@
-console.log("this is the signup page js")
+
+new Vue({
+    el: '#sign_up_section',
+    data: {
+
+    },
+    methods: {
+
+    }
+})

@@ -16,4 +16,6 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/pages/sign_up.js', 'public/js')
 
     .sass('resources/scss/app.scss', 'public/css', [])
-    .sass('resources/scss/pages/sign_in.scss', 'public/css', []);
+    .sass('resources/scss/auth/verify_email.scss', 'public/css', [])
+    .sass('resources/scss/pages/sign_in.scss', 'public/css', [])
+    .sass('resources/scss/pages/sign_up.scss', 'public/css', []);
