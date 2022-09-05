@@ -3,6 +3,73 @@
 #nav_section{
     background-color: theme.$primary;
     *{
-        
+        color: white;
+        text-decoration: none;
+    }
+
+    nav{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        .logo{
+            font-weight: bolder;
+        }
+        .links{
+            transition: .4s;
+            background-color: theme.$primary;
+            position: fixed;
+            top: 0px;
+            left: -300px;
+            width: 100%;
+            max-width: 300px;
+            height: 100vh;
+            padding: 2rem 0rem;
+            #btn_menu_close{
+                display: block;
+                margin: 0rem 0rem 0rem auto;
+            }
+            ul{
+                padding: 0rem;
+                li{
+                    list-style: none;
+                    padding: 1rem;
+                    transition: .4s;
+    
+                    &:hover{
+                        background-color: theme.$primary-light;
+                    }
+                }
+            }
+            
+        }
+    }
+
+
+    @media only screen and (min-width: 768px){
+        nav{
+            display: grid;
+            grid-template-columns: auto 1fr;
+            #btn_menu_close, #btn_menu{
+                display: none !important;
+            }
+            .links{
+                position: initial;
+                height: initial;
+                padding: 0rem;
+                align-self: flex-end !important;
+                background-color: gray;
+                ul {
+                    
+                    grid-template-columns: 1fr 1fr 1fr;
+                    display: grid;
+                    // justify-items: ;
+                    align-items: center;
+                    justify-content: center;
+                    li{
+                        padding: 1rem .5rem;
+                    }
+                }
+            }
+        }
     }
 }

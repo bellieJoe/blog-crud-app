@@ -1,19 +1,44 @@
 
 <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
 
-<section class="" id="nav_section">
-    <nav class="navbar navbar-expand-sm  container">
-        <div class="navbar-brand text-light fw-bold">
-            BLOG
+<section  id="nav_section">
+    <nav class="container">
+        <button class="btn btn-lg btn-outline btn-menu" id="btn_menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="logo">
+            <a href="/blog">
+                BLOG App
+            </a>
         </div>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ">
-                <li class="nav-item">
-                    <a href="/signup" class="nav-link text-light">Sign Up</a>
+        <div class="links" id="links_container">
+            <button class="btn btn-lg btn-outline btn-menu" id="btn_menu_close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <ul class="">
+                <li >
+                    <a href="/blog" class="nav-link text-light">
+                        <i class="fa-solid fa-blog"></i>
+                        Blogs
+                    </a>
+                </li>
+                <li>
+                    <a href="/blog" class="nav-link text-light">
+                        <i class="fa-solid fa-gear"></i>
+                        Settings
+                    </a>
+                </li>
+                <li>
+                    <a href="/user/logout" class="nav-link text-light">
+                        <i class="fa-solid fa-gear"></i>
+                        Sign Out
+                    </a>
                 </li>
             </ul>
         </div>
     </nav>
+
+    <script src="{{ asset('js/nav.js') }}"></script>
     
 </section>
 

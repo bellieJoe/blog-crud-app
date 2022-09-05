@@ -1,3 +1,66 @@
 #nav_section {
   background-color: #495C83;
 }
+#nav_section * {
+  color: white;
+  text-decoration: none;
+}
+#nav_section nav {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+#nav_section nav .logo {
+  font-weight: bolder;
+}
+#nav_section nav .links {
+  transition: 0.4s;
+  background-color: #495C83;
+  position: fixed;
+  top: 0px;
+  left: -300px;
+  width: 100%;
+  max-width: 300px;
+  height: 100vh;
+  padding: 2rem 0rem;
+}
+#nav_section nav .links #btn_menu_close {
+  display: block;
+  margin: 0rem 0rem 0rem auto;
+}
+#nav_section nav .links ul {
+  padding: 0rem;
+}
+#nav_section nav .links ul li {
+  list-style: none;
+  padding: 1rem;
+  transition: 0.4s;
+}
+#nav_section nav .links ul li:hover {
+  background-color: #6682b9;
+}
+@media only screen and (min-width: 768px) {
+  #nav_section nav {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+  #nav_section nav #btn_menu_close, #nav_section nav #btn_menu {
+    display: none !important;
+  }
+  #nav_section nav .links {
+    position: initial;
+    height: initial;
+    padding: 0rem;
+    align-self: flex-end !important;
+    background-color: gray;
+  }
+  #nav_section nav .links ul {
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+  #nav_section nav .links ul li {
+    padding: 1rem 0.5rem;
+  }
+}
