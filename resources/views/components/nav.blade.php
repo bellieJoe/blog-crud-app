@@ -1,4 +1,7 @@
-<section class="bg-primary">
+
+<link rel="stylesheet" href="{{ asset('css/nav.css') }}">
+
+<section class="" id="nav_section">
     <nav class="navbar navbar-expand-sm  container">
         <div class="navbar-brand text-light fw-bold">
             BLOG

@@ -19320,6 +19320,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/scss/components/nav.scss":
+/*!********************************************!*\
+  !*** ./resources/scss/components/nav.scss ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/scss/auth/verify_email.scss":
 /*!***********************************************!*\
   !*** ./resources/scss/auth/verify_email.scss ***!
@@ -19678,7 +19691,8 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 			"css/app": 0,
 /******/ 			"css/sign_up": 0,
 /******/ 			"css/sign_in": 0,
-/******/ 			"css/verify_email": 0
+/******/ 			"css/verify_email": 0,
+/******/ 			"css/nav": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -19728,11 +19742,12 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/sign_up","css/sign_in","css/verify_email"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/sign_up","css/sign_in","css/verify_email"], () => (__webpack_require__("./resources/scss/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/sign_up","css/sign_in","css/verify_email"], () => (__webpack_require__("./resources/scss/auth/verify_email.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/sign_up","css/sign_in","css/verify_email"], () => (__webpack_require__("./resources/scss/pages/sign_in.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/sign_up","css/sign_in","css/verify_email"], () => (__webpack_require__("./resources/scss/pages/sign_up.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/sign_up","css/sign_in","css/verify_email","css/nav"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/sign_up","css/sign_in","css/verify_email","css/nav"], () => (__webpack_require__("./resources/scss/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/sign_up","css/sign_in","css/verify_email","css/nav"], () => (__webpack_require__("./resources/scss/components/nav.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/sign_up","css/sign_in","css/verify_email","css/nav"], () => (__webpack_require__("./resources/scss/auth/verify_email.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/sign_up","css/sign_in","css/verify_email","css/nav"], () => (__webpack_require__("./resources/scss/pages/sign_in.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/sign_up","css/sign_in","css/verify_email","css/nav"], () => (__webpack_require__("./resources/scss/pages/sign_up.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
