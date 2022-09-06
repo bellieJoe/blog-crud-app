@@ -1,3 +1,39 @@
+@use '../../theme.scss';
+
 #blog_section{
-    // background-color: gray;
+    .blogs_list{
+        max-width: 500px;
+        margin: 0rem auto;
+        .blog{
+            margin: 1rem 0rem;
+            background: white;
+            border-radius: .2rem;
+            .blog_header, .blog_content, .blog_footer{
+                padding: .5rem 1rem;
+            }
+            .blog_footer{
+                background: rgb(238, 238, 238);
+            }
+            .blog_footer, .blog_header{
+                label{
+                    font-size: small;
+                    span{
+                        color: theme.$tertiary;
+                    }
+                }
+            }
+            .blog_header{
+                h6{
+                    color: theme.$secondary;
+                    font-weight: bolder;
+                    margin-bottom: 0rem;
+                }
+            }
+            .blog_content{
+                p{
+                    white-space: pre;
+                }
+            }
+        }
+    }
 }

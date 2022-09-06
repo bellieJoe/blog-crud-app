@@ -1,1 +1,29 @@
-
+#blog_section .blogs_list {
+  max-width: 500px;
+  margin: 0rem auto;
+}
+#blog_section .blogs_list .blog {
+  margin: 1rem 0rem;
+  background: white;
+  border-radius: 0.2rem;
+}
+#blog_section .blogs_list .blog .blog_header, #blog_section .blogs_list .blog .blog_content, #blog_section .blogs_list .blog .blog_footer {
+  padding: 0.5rem 1rem;
+}
+#blog_section .blogs_list .blog .blog_footer {
+  background: rgb(238, 238, 238);
+}
+#blog_section .blogs_list .blog .blog_footer label, #blog_section .blogs_list .blog .blog_header label {
+  font-size: small;
+}
+#blog_section .blogs_list .blog .blog_footer label span, #blog_section .blogs_list .blog .blog_header label span {
+  color: #A8A4CE;
+}
+#blog_section .blogs_list .blog .blog_header h6 {
+  color: #7A86B6;
+  font-weight: bolder;
+  margin-bottom: 0rem;
+}
+#blog_section .blogs_list .blog .blog_content p {
+  white-space: pre;
+}

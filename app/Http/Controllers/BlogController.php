@@ -13,7 +13,17 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('pages.blog.blog');
+        $blogs = Blog::where([
+            'owner_id' => Auth::user()->user_id
+        ])
+        ->leftJoin('users', 'blogs.owner_id', '=', 'users.user_id' )
+        ->orderBy('blogs.updated_at', 'desc')
+        ->paginate(10);
+
+        return view('pages.blog.blog')
+        ->with([
+            'blogs' => $blogs
+        ]);
     }
 
     /**

@@ -17,7 +17,7 @@
                         Blogs
                     </div>
                     <ul>
-                        <li><a href="">All Blogs</a></li>
+                        <li><a href="/blog">My Blogs</a></li>
                         <li><a href="/blog/create">Write Blog</a></li>
                     </ul>
                 </div>
@@ -35,12 +35,6 @@
                 </a>
             </li>
         </ul>
-        {{-- <div class="links" id="links_container">
-            <button id="btn_menu_close" class="btn btn-lg btn-outline btn-menu">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            
-        </div> --}}
     </nav>
 
     <script src="{{ asset('js/nav.js') }}"></script>
