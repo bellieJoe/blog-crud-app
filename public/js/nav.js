@@ -11004,7 +11004,11 @@ var links_container = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#links_cont
 var btn_menu = jquery__WEBPACK_IMPORTED_MODULE_0___default()("#btn_menu");
 var btn_menu_close = jquery__WEBPACK_IMPORTED_MODULE_0___default()("#btn_menu_close");
 btn_menu.on('click', function () {
-  links_container.css('left', '0px');
+  if (links_container.css('left') == '-300px') {
+    links_container.css('left', '0px');
+  } else {
+    links_container.css('left', '-300px');
+  }
 });
 btn_menu_close.on('click', function () {
   links_container.css('left', '-300px');

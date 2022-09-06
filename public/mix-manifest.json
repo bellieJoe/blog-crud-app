@@ -4,9 +4,11 @@
     "/js/sign_up.js": "/js/sign_up.js",
     "/js/nav.js": "/js/nav.js",
     "/css/app.css": "/css/app.css",
-    "/css/sign_in.css": "/css/sign_in.css",
+    "/css/pages/blog/blog.css": "/css/pages/blog/blog.css",
     "/css/verify_email.css": "/css/verify_email.css",
     "/css/nav.css": "/css/nav.css",
     "/css/theme.css": "/css/theme.css",
-    "/css/sign_up.css": "/css/sign_up.css"
+    "/css/sign_up.css": "/css/sign_up.css",
+    "/css/sign_in.css": "/css/sign_in.css",
+    "/css/pages/blog/create.css": "/css/pages/blog/create.css"
 }

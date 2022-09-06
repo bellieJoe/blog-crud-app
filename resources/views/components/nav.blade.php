@@ -7,35 +7,40 @@
             <i class="fa-solid fa-bars"></i>
         </button>
         <div class="logo">
-            <a href="/blog">
-                BLOG App
-            </a>
+            <a href="/blog">BLOG App</a>
         </div>
-        <div class="links" id="links_container">
-            <button class="btn btn-lg btn-outline btn-menu" id="btn_menu_close">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <ul class="">
-                <li >
-                    <a href="/blog" class="nav-link text-light">
+        <ul class="links_list" id="links_container">
+            <li >
+                <div class="nav_group">
+                    <div>
                         <i class="fa-solid fa-blog"></i>
                         Blogs
-                    </a>
-                </li>
-                <li>
-                    <a href="/blog" class="nav-link text-light">
-                        <i class="fa-solid fa-gear"></i>
-                        Settings
-                    </a>
-                </li>
-                <li>
-                    <a href="/user/logout" class="nav-link text-light">
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                        Sign Out
-                    </a>
-                </li>
-            </ul>
-        </div>
+                    </div>
+                    <ul>
+                        <li><a href="">All Blogs</a></li>
+                        <li><a href="/blog/create">Write Blog</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="/settings">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+            </li>
+            <li>
+                <a href="/user/logout" >
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    Sign Out
+                </a>
+            </li>
+        </ul>
+        {{-- <div class="links" id="links_container">
+            <button id="btn_menu_close" class="btn btn-lg btn-outline btn-menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+        </div> --}}
     </nav>
 
     <script src="{{ asset('js/nav.js') }}"></script>

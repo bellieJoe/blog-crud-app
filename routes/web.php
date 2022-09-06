@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use GuzzleHttp\Middleware;
@@ -44,10 +45,7 @@ Route::get('/home', function(){
     return redirect('/blog');
 });
 
-Route::get('/blog', function () {
-    return view('pages.blogs');
-})
-->middleware('auth', 'verified');
+
 
 
 
@@ -83,6 +81,9 @@ Route::prefix('email')->group(function () {
     })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 });
 
+/* 
+User
+*/
 Route::prefix('user')->group(function () {
 
     Route::post('register', [UserController::class, 'register']);
@@ -91,3 +92,14 @@ Route::prefix('user')->group(function () {
 
     Route::post('login', [UserController::class, 'login']);
 });
+
+// Route::prefix('blog')->group(function () {
+//     Route::get('', function () {
+//         return view('pages.blog');
+//     })
+//     ->middleware('auth', 'verified');
+
+//     // Route::resource()
+// });
+
+Route::resource('blog', BlogController::class)->middleware('auth');
