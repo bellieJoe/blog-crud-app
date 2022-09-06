@@ -30,7 +30,7 @@
                 </li>
                 <li>
                     <a href="/user/logout" class="nav-link text-light">
-                        <i class="fa-solid fa-gear"></i>
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
                         Sign Out
                     </a>
                 </li>

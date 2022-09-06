@@ -23,7 +23,7 @@
             width: 100%;
             max-width: 300px;
             height: 100vh;
-            padding: 2rem 0rem;
+            padding: 1rem 0rem;
             #btn_menu_close{
                 display: block;
                 margin: 0rem 0rem 0rem auto;
@@ -32,9 +32,11 @@
                 padding: 0rem;
                 li{
                     list-style: none;
-                    padding: 1rem;
-                    transition: .4s;
-    
+                    
+                    a{
+                        padding: 1rem;
+                        transition: .4s;
+                    }
                     &:hover{
                         background-color: theme.$primary-light;
                     }
@@ -48,25 +50,28 @@
     @media only screen and (min-width: 768px){
         nav{
             display: grid;
-            grid-template-columns: auto 1fr;
+            grid-template-columns: 1fr auto;
             #btn_menu_close, #btn_menu{
                 display: none !important;
             }
             .links{
                 position: initial;
-                height: initial;
+                height: 100%;
+                max-width: 100%;
                 padding: 0rem;
-                align-self: flex-end !important;
-                background-color: gray;
+                // background-color: gray;
                 ul {
-                    
-                    grid-template-columns: 1fr 1fr 1fr;
+                    height: 100%;
+                    grid-template-columns: repeat(3, 1fr);
                     display: grid;
-                    // justify-items: ;
+                    justify-items: flex-end;
                     align-items: center;
                     justify-content: center;
                     li{
-                        padding: 1rem .5rem;
+                        a{
+                            height: 100%;
+                            padding: .5rem 1rem;
+                        }
                     }
                 }
             }
