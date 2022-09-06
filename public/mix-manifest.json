@@ -3,6 +3,7 @@
     "/js/sign_in.js": "/js/sign_in.js",
     "/js/sign_up.js": "/js/sign_up.js",
     "/js/nav.js": "/js/nav.js",
+    "/js/pages/blog/blog.js": "/js/pages/blog/blog.js",
     "/css/app.css": "/css/app.css",
     "/css/pages/blog/blog.css": "/css/pages/blog/blog.css",
     "/css/verify_email.css": "/css/verify_email.css",

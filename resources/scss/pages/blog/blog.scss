@@ -23,6 +23,45 @@
                 }
             }
             .blog_header{
+                display: grid;
+                grid-template-columns: 1fr auto;
+                align-items: center;
+                .blog_header_settings{
+                    ul{
+                        background-color: gray;
+                        position: absolute;
+                        // bottom: -1.5rem;
+                        // z-index: 1;
+                        margin-top: 1.5rem ;
+                        padding-left: 0rem;
+                        border: 1px solid rgb(235, 235, 235);
+                        li{
+                            list-style-type: none;
+                            a, button{
+                                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                display: block;
+                                padding: .1rem .5rem;
+                                text-decoration: none;
+                                outline: none;
+                                border: none;
+                                background: rgb(243, 243, 243);
+                                &:hover{
+                                    background: rgb(223, 223, 223);
+                                }
+                            }
+                        }
+                    }
+                    button.blog_header_button{
+                        float: right;
+                        outline: none;
+                        border: none;
+                        background: white;
+                        color: gray;
+                        &:hover{
+                            color: rgb(53, 53, 53);
+                        }
+                    }
+                }
                 h6{
                     color: theme.$secondary;
                     font-weight: bolder;

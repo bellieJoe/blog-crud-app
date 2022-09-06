@@ -15,6 +15,7 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/pages/sign_in.js', 'public/js')
     .js('resources/js/pages/sign_up.js', 'public/js')
     .js('resources/js/components/nav.js', 'public/js')
+    .js('resources/js/pages/blog/blog.js', 'public/js/pages/blog')
 
     .sass('resources/scss/app.scss', 'public/css', [])
     .sass('resources/scss/theme.scss', 'public/css', [])

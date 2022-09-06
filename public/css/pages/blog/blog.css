@@ -19,6 +19,43 @@
 #blog_section .blogs_list .blog .blog_footer label span, #blog_section .blogs_list .blog .blog_header label span {
   color: #A8A4CE;
 }
+#blog_section .blogs_list .blog .blog_header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+#blog_section .blogs_list .blog .blog_header .blog_header_settings ul {
+  background-color: gray;
+  position: absolute;
+  margin-top: 1.5rem;
+  padding-left: 0rem;
+  border: 1px solid rgb(235, 235, 235);
+}
+#blog_section .blogs_list .blog .blog_header .blog_header_settings ul li {
+  list-style-type: none;
+}
+#blog_section .blogs_list .blog .blog_header .blog_header_settings ul li a, #blog_section .blogs_list .blog .blog_header .blog_header_settings ul li button {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: block;
+  padding: 0.1rem 0.5rem;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background: rgb(243, 243, 243);
+}
+#blog_section .blogs_list .blog .blog_header .blog_header_settings ul li a:hover, #blog_section .blogs_list .blog .blog_header .blog_header_settings ul li button:hover {
+  background: rgb(223, 223, 223);
+}
+#blog_section .blogs_list .blog .blog_header .blog_header_settings button.blog_header_button {
+  float: right;
+  outline: none;
+  border: none;
+  background: white;
+  color: gray;
+}
+#blog_section .blogs_list .blog .blog_header .blog_header_settings button.blog_header_button:hover {
+  color: rgb(53, 53, 53);
+}
 #blog_section .blogs_list .blog .blog_header h6 {
   color: #7A86B6;
   font-weight: bolder;
