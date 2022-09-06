@@ -20,7 +20,7 @@
                                 </button>
                                 {{-- v-if="opened_setting && opened_setting == '{{ $blog->blog_id }}'" --}}
                                 <ul class="shadow-sm" v-if="opened_setting && opened_setting == '{{ $blog->blog_id }}'"  >
-                                    <li><a href="" class="text-secondary"> Edit</a></li>
+                                    <li><a href="/blog/{{ $blog->blog_id }}/edit" class="text-secondary"> Edit</a></li>
                                     <li><button class="text-danger"> Delete</button></li>
                                 </ul>
                             </div>

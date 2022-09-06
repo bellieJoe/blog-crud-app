@@ -12,7 +12,7 @@ new Vue({
                 this.opened_setting = id
             }
             else{
-                this.opened_setting = this.opened_setting == id ? null : this.opened_setting;
+                this.opened_setting = this.opened_setting == id ? null : id;
             }
         },
     }

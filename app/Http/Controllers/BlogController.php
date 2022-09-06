@@ -72,7 +72,7 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('pages.blog.edit');
     }
 
     /**
