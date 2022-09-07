@@ -22,7 +22,7 @@
                     <button class="btn btn-primary" type="submit">Post</button>
                 </div>
                 @includeWhen(Session::has('message') ,'components.response_message', [
-                    'status' => 'success',
+                    'status' => Session::get('status'),
                     'response_message' => Session::get('message')
                 ])
             </form>

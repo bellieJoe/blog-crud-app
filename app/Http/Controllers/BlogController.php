@@ -66,25 +66,39 @@ class BlogController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        return view('pages.blog.edit');
+        $blog = Blog::find($id);
+
+        return view('pages.blog.edit', [
+            'blog' => $blog
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'blog_title' => ['required', 'max:100'],
+            'blog_content' => ['required', 'max:3000']
+        ]);
+
+        Blog::find($id)
+        ->update([
+            'blog_title' => $request->blog_title,
+            'blog_content' => $request->blog_content,
+        ]);
+
+        return back()->with([
+            'message' => 'Blog successfully updated',
+            'status' => 'success'
+        ]);
     }
 
     /**
