@@ -13,6 +13,11 @@
 #home_section .blogs_list .blog .blog_footer {
   background: rgb(238, 238, 238);
 }
+#home_section .blogs_list .blog .blog_footer .like_button {
+  border: none;
+  color: #495C83;
+  font-size: larger;
+}
 #home_section .blogs_list .blog .blog_footer label, #home_section .blogs_list .blog .blog_header label {
   font-size: small;
 }

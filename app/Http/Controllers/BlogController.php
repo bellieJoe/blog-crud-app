@@ -130,7 +130,7 @@ class BlogController extends Controller
     public function stream(){
         $blogs = Blog::query()
         ->leftJoin('users', 'blogs.owner_id', '=', 'users.user_id')
-        ->paginate(2);
+        ->paginate(10);
         
         return view('pages.home', [
             'blogs' => $blogs

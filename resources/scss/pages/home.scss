@@ -13,6 +13,11 @@
             }
             .blog_footer{
                 background: rgb(238, 238, 238);
+                .like_button{
+                    border: none;
+                    color: theme.$primary;
+                    font-size: larger;
+                }
             }
             .blog_footer, .blog_header{
                 label{
