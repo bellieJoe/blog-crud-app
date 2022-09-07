@@ -12,6 +12,7 @@ class BlogController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except(['show', 'stream']);
+        // $this->middleware('can:update,blog');
     }
 
     /**
@@ -64,13 +65,13 @@ class BlogController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $blog = Blog::find($id);
+        $blog = Blog::where('blog_id', $id)
+        ->leftJoin('users', 'blogs.owner_id', '=', 'users.user_id')
+        ->first();
+        
         return view('pages.blog.show')
         ->with([
             'blog' => $blog
@@ -84,6 +85,8 @@ class BlogController extends Controller
     {
         $blog = Blog::find($id);
 
+        $this->authorize('update', $blog);
+
         return view('pages.blog.edit', [
             'blog' => $blog
         ]);
@@ -94,14 +97,16 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $blog = Blog::find($id);
+
+        $this->authorize('update', $blog);
+
         $request->validate([
             'blog_title' => ['required', 'max:100'],
             'blog_content' => ['required', 'max:3000']
         ]);
 
-        Blog::find($id)
-        ->update([
+        $blog->update([
             'blog_title' => $request->blog_title,
             'blog_content' => $request->blog_content
         ]);

@@ -12,6 +12,7 @@
                         <h6>{{ $blog->blog_title }}</h6>
                         <label>Written By <span>{{ $blog->fullname }}</span> {{ $blog->created_at->diffForHumans() }}</label><br>
                     </div>
+                    @can('view', $blog)
                     <div class="blog_header_settings">
                         <button class=" blog_header_button" v-on:click="openSetting({{ $blog->blog_id }})" >
                             <i class="fa-solid fa-ellipsis"></i>
@@ -40,6 +41,7 @@
                             </form>
                         </div>
                     </div>
+                    @endcan
                     
                 </div>
                 <div class="blog_content">
