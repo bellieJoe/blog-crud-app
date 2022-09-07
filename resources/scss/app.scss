@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 
+// Custom.scss
+// Option A: Include all of Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+$primary: #495C83;
+
 *{
     font-family: 'Montserrat', sans-serif;
 }

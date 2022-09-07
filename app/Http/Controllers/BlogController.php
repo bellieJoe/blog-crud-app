@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['show', 'stream']);
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -114,5 +120,15 @@ class BlogController extends Controller
         Blog::find($id)->delete();
 
         return redirect()->route('blog.index');
+    }
+
+    public function stream(){
+        $blogs = Blog::query()
+        ->leftJoin('users', 'blogs.owner_id', '=', 'users.user_id')
+        ->paginate(2);
+        
+        return view('pages.home', [
+            'blogs' => $blogs
+        ]);
     }
 }

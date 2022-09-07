@@ -25,9 +25,7 @@ Route::get('testing', function(Request $req){
     return json_encode(User::find(Auth::user()->user_id));
 });
 
-Route::get('', function () {
-    return view('pages.home');
-})
+Route::get('', [BlogController::class, 'stream'])
 ->name('home');
 
 
@@ -81,4 +79,4 @@ Route::prefix('user')->group(function () {
 /* 
 Blog
  */
-Route::resource('blog', BlogController::class)->middleware('auth')->middleware('verified');
+Route::resource('blog', BlogController::class);

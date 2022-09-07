@@ -17,6 +17,7 @@
 #nav_section nav ul.links_list {
   position: fixed;
   top: 48px;
+  z-index: 4;
   left: -300px;
   height: 100vh;
   padding: 0px;

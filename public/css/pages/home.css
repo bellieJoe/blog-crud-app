@@ -1,0 +1,66 @@
+#home_section .blogs_list {
+  max-width: 500px;
+  margin: 0rem auto;
+}
+#home_section .blogs_list .blog {
+  margin: 1rem 0rem;
+  background: white;
+  border-radius: 0.2rem;
+}
+#home_section .blogs_list .blog .blog_header, #home_section .blogs_list .blog .blog_content, #home_section .blogs_list .blog .blog_footer {
+  padding: 0.5rem 1rem;
+}
+#home_section .blogs_list .blog .blog_footer {
+  background: rgb(238, 238, 238);
+}
+#home_section .blogs_list .blog .blog_footer label, #home_section .blogs_list .blog .blog_header label {
+  font-size: small;
+}
+#home_section .blogs_list .blog .blog_footer label span, #home_section .blogs_list .blog .blog_header label span {
+  color: #A8A4CE;
+}
+#home_section .blogs_list .blog .blog_header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+#home_section .blogs_list .blog .blog_header .blog_header_settings ul {
+  background-color: gray;
+  position: absolute;
+  margin-top: 1.5rem;
+  padding-left: 0rem;
+  border: 1px solid rgb(235, 235, 235);
+}
+#home_section .blogs_list .blog .blog_header .blog_header_settings ul li {
+  list-style-type: none;
+}
+#home_section .blogs_list .blog .blog_header .blog_header_settings ul li a, #home_section .blogs_list .blog .blog_header .blog_header_settings ul li button {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: block;
+  padding: 0.1rem 0.5rem;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background: rgb(243, 243, 243);
+}
+#home_section .blogs_list .blog .blog_header .blog_header_settings ul li a:hover, #home_section .blogs_list .blog .blog_header .blog_header_settings ul li button:hover {
+  background: rgb(223, 223, 223);
+}
+#home_section .blogs_list .blog .blog_header .blog_header_settings button.blog_header_button {
+  float: right;
+  outline: none;
+  border: none;
+  background: white;
+  color: gray;
+}
+#home_section .blogs_list .blog .blog_header .blog_header_settings button.blog_header_button:hover {
+  color: rgb(53, 53, 53);
+}
+#home_section .blogs_list .blog .blog_header h6 {
+  color: #7A86B6;
+  font-weight: bolder;
+  margin-bottom: 0rem;
+}
+#home_section .blogs_list .blog .blog_content p {
+  white-space: pre-wrap;
+}

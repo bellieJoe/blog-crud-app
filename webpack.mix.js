@@ -22,8 +22,11 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/scss/theme.scss', 'public/css', [])
     .sass('resources/scss/components/nav.scss', 'public/css', [])
     .sass('resources/scss/auth/verify_email.scss', 'public/css', [])
+
     .sass('resources/scss/pages/blog/blog.scss', 'public/css/pages/blog', [])
     .sass('resources/scss/pages/blog/create.scss', 'public/css/pages/blog', [])
     .sass('resources/scss/pages/blog/show.scss', 'public/css/pages/blog', [])
+
+    .sass('resources/scss/pages/home.scss', 'public/css/pages', [])
     .sass('resources/scss/pages/sign_in.scss', 'public/css', [])
     .sass('resources/scss/pages/sign_up.scss', 'public/css', []);

@@ -12,6 +12,7 @@
     "/css/theme.css": "/css/theme.css",
     "/css/sign_up.css": "/css/sign_up.css",
     "/css/sign_in.css": "/css/sign_in.css",
+    "/css/pages/home.css": "/css/pages/home.css",
     "/css/pages/blog/show.css": "/css/pages/blog/show.css",
     "/css/pages/blog/create.css": "/css/pages/blog/create.css"
 }
