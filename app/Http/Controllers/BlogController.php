@@ -113,6 +113,6 @@ class BlogController extends Controller
     {
         Blog::find($id)->delete();
 
-        return back();
+        return redirect()->route('blog.index');
     }
 }
