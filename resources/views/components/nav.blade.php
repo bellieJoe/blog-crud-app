@@ -10,30 +10,51 @@
             <a href="/blog">BLOG App</a>
         </div>
         <ul class="links_list" id="links_container">
-            <li >
-                <div class="nav_group">
-                    <div>
-                        <i class="fa-solid fa-blog"></i>
-                        Blogs
+            <li>
+                <a href="/" >
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </a>
+            </li>
+            @if (Auth::check())
+                <li >
+                    <div class="nav_group">
+                        <div>
+                            <i class="fa-solid fa-blog"></i>
+                            Blogs
+                        </div>
+                        <ul>
+                            <li><a href="/blog">My Blogs</a></li>
+                            <li><a href="/blog/create">Write Blog</a></li>
+                        </ul>
                     </div>
-                    <ul>
-                        <li><a href="/blog">My Blogs</a></li>
-                        <li><a href="/blog/create">Write Blog</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <a href="/settings">
-                    <i class="fa-solid fa-gear"></i>
-                    Settings
-                </a>
-            </li>
-            <li>
-                <a href="/user/logout" >
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    Sign Out
-                </a>
-            </li>
+                </li>
+                <li>
+                    <a href="/settings">
+                        <i class="fa-solid fa-gear"></i>
+                        Settings
+                    </a>
+                </li>
+                <li>
+                    <a href="/user/logout" >
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        Sign Out
+                    </a>
+                </li>
+            @else
+                <li>
+                    <a href="/signin" >
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        Sign In
+                    </a>
+                </li>
+                <li>
+                    <a href="/signup" >
+                        <i class="fa-solid fa-user"></i>
+                        Sign Up
+                    </a>
+                </li>
+            @endif
         </ul>
     </nav>
 

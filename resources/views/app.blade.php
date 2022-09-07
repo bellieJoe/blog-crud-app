@@ -21,9 +21,9 @@
     
 </head>
 <body>
-    @if (Auth::check())
-        @include('../components/nav')
-    @endif
+
+    @include('../components/nav')
+
     
     @yield('content')
 

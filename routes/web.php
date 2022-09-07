@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\EmailVerificationController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use GuzzleHttp\Middleware;
@@ -25,8 +26,9 @@ Route::get('testing', function(Request $req){
 });
 
 Route::get('', function () {
-    return redirect('signin');
-});
+    return view('pages.home');
+})
+->name('home');
 
 
 Route::get('/signin', function () {
@@ -41,9 +43,7 @@ Route::get('/signup', function () {
 })
 ->middleware('guest');
 
-Route::get('/home', function(){
-    return redirect('/blog');
-});
+
 
 
 
@@ -53,32 +53,17 @@ Route::get('/home', function(){
 Email verification
 */
 Route::prefix('email')->group(function () {
-    Route::get('verify-email', function(){
-        return view('auth.verify_email');
-    })
+    Route::get('verify-email',[ EmailVerificationController::class, 'showVerificationNotice'])
     ->middleware('auth')
     ->name('verification.notice');
 
-    Route::get('verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-        $request->fulfill();
-        return redirect('/blog');
-    })
+    Route::get('verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])
     ->middleware(['auth', 'signed'])
     ->name('verification.verify');
 
-    Route::post('verification-notification', function (Request $request) {
-        $request->user()->sendEmailVerificationNotification();
-     
-        return back()->with('message', 'Verification link sent!');
-    })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
-
-
-    Route::post('/verification-notification', function (Request $request) {
-        $user = User::find(Auth::user()->user_id);
-        $user->sendEmailVerificationNotification();
-     
-        return back()->with('message', 'Verification link sent!');
-    })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+    Route::post('verification-notification', [EmailVerificationController::class, 'sendVerification'])
+    ->middleware(['auth', 'throttle:6,1'])
+    ->name('verification.send');
 });
 
 /* 
@@ -93,13 +78,7 @@ Route::prefix('user')->group(function () {
     Route::post('login', [UserController::class, 'login']);
 });
 
-// Route::prefix('blog')->group(function () {
-//     Route::get('', function () {
-//         return view('pages.blog');
-//     })
-//     ->middleware('auth', 'verified');
-
-//     // Route::resource()
-// });
-
-Route::resource('blog', BlogController::class)->middleware('auth');
+/* 
+Blog
+ */
+Route::resource('blog', BlogController::class)->middleware('auth')->middleware('verified');
