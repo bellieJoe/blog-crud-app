@@ -62,5 +62,5 @@
   margin-bottom: 0rem;
 }
 #blog_section .blogs_list .blog .blog_content p {
-  white-space: pre;
+  white-space: pre-wrap;
 }

@@ -6,7 +6,7 @@
 
     <section id="create_blog_section">
         <div class="container">
-            <form action="/blog" method="POST">
+            <form action="{{ route('blog.store') }}" method="POST">
                 @csrf
                 <div class="mb-2">
                     <label for="blog_title">Title</label>
@@ -29,3 +29,4 @@
         </div>
     </section>
 @endsection
+

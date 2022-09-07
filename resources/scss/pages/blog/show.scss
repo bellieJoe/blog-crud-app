@@ -1,0 +1,75 @@
+@use '../../theme.scss';
+
+#show_blog_section{
+
+    .blog{
+        max-width: 500px;
+        margin: 1rem auto;
+        background: white;
+        border-radius: .2rem;
+        .blog_header, .blog_content, .blog_footer{
+            padding: .5rem 1rem;
+        }
+        .blog_footer{
+            background: rgb(238, 238, 238);
+        }
+        .blog_footer, .blog_header{
+            label{
+                font-size: small;
+                span{
+                    color: theme.$tertiary;
+                }
+            }
+        }
+        .blog_header{
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            .blog_header_settings{
+                ul{
+                    background-color: gray;
+                    position: absolute;
+                    margin-top: 1.5rem ;
+                    padding-left: 0rem;
+                    border: 1px solid rgb(235, 235, 235);
+                    li{
+                        list-style-type: none;
+                        a, button{
+                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                            display: block;
+                            padding: .1rem .5rem;
+                            text-decoration: none;
+                            outline: none;
+                            border: none;
+                            background: rgb(243, 243, 243);
+                            &:hover{
+                                background: rgb(223, 223, 223);
+                            }
+                        }
+                    }
+                }
+                button.blog_header_button{
+                    float: right;
+                    outline: none;
+                    border: none;
+                    background: white;
+                    color: gray;
+                    &:hover{
+                        color: rgb(53, 53, 53);
+                    }
+                }
+            }
+            h6{
+                color: theme.$secondary;
+                font-weight: bolder;
+                margin-bottom: 0rem;
+            }
+        }
+        .blog_content{
+            p{
+                white-space: pre-wrap;
+            }
+        }
+    }
+    
+}

@@ -30,8 +30,6 @@
                     ul{
                         background-color: gray;
                         position: absolute;
-                        // bottom: -1.5rem;
-                        // z-index: 1;
                         margin-top: 1.5rem ;
                         padding-left: 0rem;
                         border: 1px solid rgb(235, 235, 235);
@@ -70,7 +68,7 @@
             }
             .blog_content{
                 p{
-                    white-space: pre;
+                    white-space: pre-wrap;
                 }
             }
         }

@@ -4,6 +4,7 @@
     "/js/sign_up.js": "/js/sign_up.js",
     "/js/nav.js": "/js/nav.js",
     "/js/pages/blog/blog.js": "/js/pages/blog/blog.js",
+    "/js/pages/blog/show.js": "/js/pages/blog/show.js",
     "/css/app.css": "/css/app.css",
     "/css/pages/blog/blog.css": "/css/pages/blog/blog.css",
     "/css/verify_email.css": "/css/verify_email.css",
@@ -11,5 +12,6 @@
     "/css/theme.css": "/css/theme.css",
     "/css/sign_up.css": "/css/sign_up.css",
     "/css/sign_in.css": "/css/sign_in.css",
+    "/css/pages/blog/show.css": "/css/pages/blog/show.css",
     "/css/pages/blog/create.css": "/css/pages/blog/create.css"
 }

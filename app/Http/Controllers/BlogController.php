@@ -50,7 +50,10 @@ class BlogController extends Controller
             'blog_content' => $request->blog_content
         ]);
 
-        return back()->with('message', 'Blog successfully save.');
+        return back()->with([
+            'message' =>  'Blog successfully save.',
+            'status' => 'success'
+        ]);
     }
 
     /**
@@ -61,7 +64,11 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        //
+        $blog = Blog::find($id);
+        return view('pages.blog.show')
+        ->with([
+            'blog' => $blog
+        ]);
     }
 
     /**
@@ -78,8 +85,6 @@ class BlogController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
      */
     public function update(Request $request, $id)
     {

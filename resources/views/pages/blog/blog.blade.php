@@ -18,7 +18,6 @@
                                 <button class=" blog_header_button" v-on:click="openSetting({{ $blog->blog_id }})" >
                                     <i class="fa-solid fa-ellipsis"></i>
                                 </button>
-                                {{-- v-if="opened_setting && opened_setting == '{{ $blog->blog_id }}'" --}}
                                 <ul class="shadow-sm" v-if="opened_setting && opened_setting == '{{ $blog->blog_id }}'"  >
                                     <li><a href="/blog/{{ $blog->blog_id }}/edit" class="text-secondary"> Edit</a></li>
                                     <li><button data-bs-toggle="modal" data-bs-target="#bs_modal_blog_del_{{ $blog->blog_id }}" class="text-danger"> Delete</button></li>
@@ -46,7 +45,7 @@
                             
                         </div>
                         <div class="blog_content">
-                            <p>{{ $blog->blog_content }}</p>
+                            <p>{{ substr($blog->blog_content, 0, 500) }} <a href="{{ route('blog.show', ['blog' => $blog->blog_id]) }}">...See more</a></p> 
                         </div>
                         <div class="blog_footer">
                             <label>Last edited {{ $blog->updated_at->diffForHumans() }}</label>
