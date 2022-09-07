@@ -7,6 +7,7 @@
     <section id="home_section">
         <div class="container">
             <div class="blogs_list">
+                <h5 class="fw-bold">Blog Stream</h5>
                 @foreach ($blogs as $blog)
                     <div class="blog shadow-sm">
                         <div class="blog_header">

@@ -10858,8 +10858,14 @@ textarea.form-control-lg {
 
 body {
   background-color: rgb(220, 237, 245) !important;
+  padding-top: 3rem !important;
 }
 
 input {
   font-family: calibri !important;
+}
+
+i {
+  transition: 0s !important;
+  background-color: inherit !important;
 }

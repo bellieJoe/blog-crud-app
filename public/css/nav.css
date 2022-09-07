@@ -10,27 +10,43 @@
 #nav_section #btn_menu_close {
   display: none;
 }
+#nav_section #btn_menu {
+  outline: none;
+  border: none;
+}
+#nav_section #btn_menu:hover {
+  transition: 0.4s;
+  background: #6682b9;
+}
 #nav_section nav {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+}
+#nav_section nav .container {
   display: flex;
   align-items: center;
 }
-#nav_section nav ul.links_list {
+#nav_section ul.links_list {
   position: fixed;
-  top: 48px;
+  top: 46px;
   z-index: 4;
   left: -300px;
   height: 100vh;
   padding: 0px;
   min-width: 250px;
 }
-#nav_section nav ul.links_list li {
+#nav_section ul.links_list li {
   list-style-type: none;
   margin: 0rem;
 }
-#nav_section nav ul.links_list li .nav_group, #nav_section nav ul.links_list li a {
+#nav_section ul.links_list li label.user_details {
+  background-color: #2e3a52;
+}
+#nav_section ul.links_list li .nav_group, #nav_section ul.links_list li a, #nav_section ul.links_list li label.user_details {
   display: block;
   padding: 0.5rem;
 }
-#nav_section nav ul.links_list li a:hover {
+#nav_section ul.links_list li a:hover {
   background: #6682b9;
 }
