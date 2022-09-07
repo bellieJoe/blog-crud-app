@@ -92,7 +92,7 @@ class BlogController extends Controller
         Blog::find($id)
         ->update([
             'blog_title' => $request->blog_title,
-            'blog_content' => $request->blog_content,
+            'blog_content' => $request->blog_content
         ]);
 
         return back()->with([
@@ -103,12 +103,11 @@ class BlogController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        Blog::find($id)->delete();
+
+        return back();
     }
 }
