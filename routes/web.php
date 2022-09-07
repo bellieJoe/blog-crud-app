@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EmailVerificationController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use GuzzleHttp\Middleware;
@@ -78,5 +79,15 @@ Route::prefix('user')->group(function () {
 
 /* 
 Blog
- */
+*/
 Route::resource('blog', BlogController::class);
+
+
+/* 
+Like
+*/
+Route::prefix('like')->group(function () {
+
+    Route::post('', [LikeController::class, 'store']);
+
+});
