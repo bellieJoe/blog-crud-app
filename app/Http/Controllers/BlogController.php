@@ -26,7 +26,7 @@ class BlogController extends Controller
         ])
         ->orderBy('blogs.updated_at', 'desc')
         ->paginate(10);
-
+        // $blog = Auth::user()->
         return view('pages.blog.blog')
         ->with([
             'blogs' => $blogs

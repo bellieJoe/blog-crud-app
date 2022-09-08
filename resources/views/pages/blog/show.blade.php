@@ -50,7 +50,7 @@
                 <div class="blog_footer">
                     <label>Last edited {{ $blog->updated_at->diffForHumans() }}</label>
                     <div>
-                        <label>{{ $blog->likes_count }} Likes</label>
+                        <label>{{ $blog->likes()->count() }} Likes</label>
                     </div>
                     <div>
                         @can('like', $blog)

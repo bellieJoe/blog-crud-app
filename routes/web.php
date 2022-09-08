@@ -24,7 +24,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('testing', function(Request $req){
-    return Blog::find(8)->user()->first();
+    $blogs =  Blog::with('user')->get();
+    return $blogs;
 });
 
 Route::get('', [BlogController::class, 'stream'])

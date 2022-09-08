@@ -9,11 +9,6 @@ class Blog extends Model
 {
     use HasFactory;
 
-    protected $appends = [
-        'likes',
-        'likes_count'
-    ];
-
     protected $primaryKey = 'blog_id';
 
     protected $fillable = [
@@ -22,6 +17,9 @@ class Blog extends Model
         'owner_id'
     ];
 
+    /* 
+    relationships
+    */
     public function user(){
         return $this->belongsTo(User::class, 'owner_id', 'user_id');
     }
