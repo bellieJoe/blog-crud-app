@@ -13,7 +13,7 @@
                         <div class="blog_header">
                             <div>
                                 <h6>{{ $blog->blog_title }}</h6>
-                                <label>Written By <span>{{ $blog->fullname }}</span> {{ $blog->created_at->diffForHumans() }}</label><br>
+                                <label>Written By <span>{{ $blog->user()->first()->fullname }}</span> {{ $blog->created_at->diffForHumans() }}</label><br>
                             </div>
                             <div class="blog_header_settings">
                                 <button class=" blog_header_button" v-on:click="openSetting({{ $blog->blog_id }})" >
@@ -29,7 +29,6 @@
                                     <form class="modal-content" method="POST" action="{{ route('blog.destroy', ['blog' => $blog->blog_id]) }}">
                                         @csrf
                                         @method('DELETE')
-
                                         <div class="modal-header">
                                             <h6 class="modal-title text-danger">Warning</h6>
                                         </div>
@@ -51,7 +50,7 @@
                         <div class="blog_footer">
                             <label>Last edited {{ $blog->updated_at->diffForHumans() }}</label>
                             <div>
-                                <label>{{ $blog->likes_count }} Likes</label>
+                                <label>{{ $blog->likes->count() }} Likes</label>
                             </div>
                         </div>
                     </div>

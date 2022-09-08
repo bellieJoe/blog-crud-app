@@ -4,6 +4,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EmailVerificationController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\UserController;
+use App\Models\Blog;
 use App\Models\User;
 use GuzzleHttp\Middleware;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -23,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('testing', function(Request $req){
-    return json_encode(User::find(Auth::user()->user_id));
+    return Blog::find(8)->user()->first();
 });
 
 Route::get('', [BlogController::class, 'stream'])

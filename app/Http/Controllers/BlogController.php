@@ -24,7 +24,6 @@ class BlogController extends Controller
         $blogs = Blog::where([
             'owner_id' => Auth::user()->user_id
         ])
-        ->leftJoin('users', 'blogs.owner_id', '=', 'users.user_id' )
         ->orderBy('blogs.updated_at', 'desc')
         ->paginate(10);
 
@@ -70,7 +69,6 @@ class BlogController extends Controller
     public function show($id)
     {
         $blog = Blog::where('blog_id', $id)
-        ->leftJoin('users', 'blogs.owner_id', '=', 'users.user_id')
         ->first();
         
         return view('pages.blog.show')
@@ -130,7 +128,6 @@ class BlogController extends Controller
 
     public function stream(){
         $blogs = Blog::query()
-        ->leftJoin('users', 'blogs.owner_id', '=', 'users.user_id')
         ->paginate(10);
 
         return view('pages.home', [
