@@ -17,6 +17,9 @@
                     border: none;
                     color: theme.$primary;
                     font-size: larger;
+                    &:hover{
+                        color: theme.$primary-light;
+                    }
                 }
             }
             .blog_footer, .blog_header{

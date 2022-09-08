@@ -90,4 +90,6 @@ Route::prefix('like')->group(function () {
 
     Route::post('', [LikeController::class, 'store']);
 
+    Route::delete('{blog_id}/{user_id}', [LikeController::class, 'destroy']);
+
 });

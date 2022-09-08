@@ -50,6 +50,9 @@
                         </div>
                         <div class="blog_footer">
                             <label>Last edited {{ $blog->updated_at->diffForHumans() }}</label>
+                            <div>
+                                <label>{{ $blog->likes_count }} Likes</label>
+                            </div>
                         </div>
                     </div>
                 @endforeach

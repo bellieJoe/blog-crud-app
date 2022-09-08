@@ -22,10 +22,35 @@
                         <div class="blog_footer">
                             <label>Last edited {{ $blog->updated_at->diffForHumans() }}</label>
                             <div>
-                                <button class="like_button" id="btn_like">
-                                    <i class="fa-regular fa-thumbs-up"></i>
-                                    {{-- <i class="fa-solid fa-thumbs-up"></i> --}}
-                                </button>
+                                <label>{{ $blog->likes_count }} Likes</label>
+                            </div>
+                            <div>
+                                @can('like', $blog)
+                                    @if (in_array([ 
+                                        'blog_id' => $blog->blog_id,
+                                        'user_id' => Auth::user()->user_id
+                                        ], $blog->likes->toArray())
+                                    ) 
+                                        {{-- unlike --}}
+                                        <form action="/like/{{ $blog->blog_id }}/{{ Auth::user()->user_id }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="like_button" id="btn_like">
+                                                <i class="fa-solid fa-thumbs-up"></i>
+                                            </button>
+                                        </form>
+                                    @else
+                                        {{-- like --}}
+                                        <form action="/like" method="post">
+                                            @csrf
+                                            <input type="hidden" name="blog_id" value="{{ $blog->blog_id }}">
+                                            <input type="hidden" name="user_id" value="{{ Auth::user()->user_id }}">
+                                            <button class="like_button" id="btn_like">
+                                                <i class="fa-regular fa-thumbs-up"></i>
+                                            </button>
+                                        </form>
+                                    @endif
+                                @endcan
                             </div>
                         </div>
                     </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Like;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -131,7 +132,7 @@ class BlogController extends Controller
         $blogs = Blog::query()
         ->leftJoin('users', 'blogs.owner_id', '=', 'users.user_id')
         ->paginate(10);
-        
+
         return view('pages.home', [
             'blogs' => $blogs
         ]);

@@ -18,6 +18,9 @@
   color: #495C83;
   font-size: larger;
 }
+#home_section .blogs_list .blog .blog_footer .like_button:hover {
+  color: #6682b9;
+}
 #home_section .blogs_list .blog .blog_footer label, #home_section .blogs_list .blog .blog_header label {
   font-size: small;
 }

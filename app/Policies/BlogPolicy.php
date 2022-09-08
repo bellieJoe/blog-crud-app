@@ -15,7 +15,6 @@ class BlogPolicy
         //
     }
 
-
     public function view(User $user, Blog $blog)
     {
         return $user->user_id === $blog->owner_id;
@@ -45,5 +44,9 @@ class BlogPolicy
     public function forceDelete(User $user, Blog $blog)
     {
         //
+    }
+
+    public function like(User $user, Blog $blog){
+        return !($user->user_id === $blog->owner_id);
     }
 }
