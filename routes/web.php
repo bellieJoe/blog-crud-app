@@ -90,8 +90,8 @@ Like
 */
 Route::prefix('like')->group(function () {
 
-    Route::post('', [LikeController::class, 'store']);
+    Route::post('', [LikeController::class, 'store'])->middleware('auth', 'verified');
 
-    Route::delete('{blog_id}/{user_id}', [LikeController::class, 'destroy']);
+    Route::delete('{blog_id}/{user_id}', [LikeController::class, 'destroy'])->middleware('auth', 'verified');
 
 });
