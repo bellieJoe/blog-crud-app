@@ -12,8 +12,7 @@ class BlogController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['show', 'stream']);
-        // $this->middleware('can:update,blog');
+        $this->middleware(['auth', 'verified'])->except(['show', 'stream']);
     }
 
     /**
