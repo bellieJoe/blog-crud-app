@@ -24,8 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('testing', function(Request $req){
-    $blogs =  Blog::with('user')->get();
-    return $blogs;
+    return Blog::factory()->count(20)->make();
 });
 
 Route::get('', [BlogController::class, 'stream'])
