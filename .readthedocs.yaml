@@ -1,4 +1,4 @@
-version: 2
+version: latest
 
 # Build PDF & ePub
 formats:
